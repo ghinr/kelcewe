@@ -55,7 +55,7 @@ int main (){
 	
 			string key;
 	
-			cout << "Masukan barang yang dicari : ";
+			cout << "Masukan barang yang dicari (gunkan huruf kapital pada awal huruf) : ";
 			cin >> key;
 	
 			int indeksbarang = sequentialsearch(daftar_barang, jumlah_elemen, key);
@@ -69,7 +69,9 @@ int main (){
 			
 		case 3:	
 		{
-			int kodebarang, i, jenis,jumlahbarang, total;
+			int  i, jenis, total;
+			int kodebarang [i];
+			int jumlahbarang [i];
 			int daftarharga[] = {0, 50000, 100000, 100000, 150000, 200000};
 			int harga[i];
 			
@@ -93,17 +95,18 @@ int main (){
 			
 			for (i=1; i<=jenis; i++){
 				cout << "- Input kode barang ke-"<< i << " : "; 
-				cin >> kodebarang;
+				cin >> kodebarang[i];
 				cout << "Masukkan jumlah barang ke-"<< i << " : "; 
-				cin >> jumlahbarang;
+				cin >> jumlahbarang[i];
 				cout << endl;
 				
-				harga[i]=jumlahbarang*daftarharga[kodebarang];
+				harga[i]=jumlahbarang[i]*daftarharga[kodebarang[i]];
 				cout << "total harga barang ke-" << i << " : " << harga[i] << endl;
 				cout << endl;
 				
 				total=total+harga[i];
 			}
+			
 			cout << "Total harga yang harus dibayar : " << total << endl;
 		}
 			break;
